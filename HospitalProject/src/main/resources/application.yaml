@@ -1,0 +1,24 @@
+
+
+spring:
+  application:
+    name: HospitalProject
+
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: saikumar
+    password: saikumar
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+        format_sql: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 9191
+

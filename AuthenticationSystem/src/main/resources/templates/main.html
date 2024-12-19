@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" /> <!-- Optional CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light background */
+            color: #333; /* Dark text */
+            text-align: center;
+        }
+        header {
+            background-color: #007bff; /* Bootstrap primary color */
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            margin: 50px 0;
+        }
+        footer {
+            padding: 20px;
+            background-color: #f1f1f1; /* Light gray for footer */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Application</h1>
+        <nav>
+            <ul>
+                
+               
+                <li><a th:href="@{/login}">Home</a></li>
+                 <li><a th:href="@{/RegisterUser}">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Home Page</h2>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>

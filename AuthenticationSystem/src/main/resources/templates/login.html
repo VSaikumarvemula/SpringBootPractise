@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef; /* Light gray background */
+            color: #333; /* Dark text */
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            color: #007bff; /* Bootstrap primary color */
+            font-size: 2.5em;
+        }
+        .error-message {
+            color: #dc3545; /* Red color for error */
+            font-weight: bold;
+        }
+        .success-message {
+            color: #28a745; /* Green color for success */
+            font-weight: bold;
+        }
+        form {
+            background-color: #fff; /* White background for form */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block; /* Center the form */
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff; /* Bootstrap primary color */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #0056b3; /* Darker shade for hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Login Page</h1>
+    
+   
+    
+    <!-- Display success message -->
+    <div th:if="${message}" class="success-message">
+        <p th:text="${message}"></p>
+    </div>
+
+    <form action="/loginform" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+        
+    </form>
+    
+     <!-- Display error message -->
+     
+    <div th:if="${error}" class="error-message" th:utext="${error}"></div>
+    
+    
+</body>
+</html>

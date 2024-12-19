@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Product Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5" th:fragment ="content" >
+        <h1 class="text-center">Product Details</h1>
+        
+        <div th:if="${product}" class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">Product Information</h5>
+                <p class="card-text"><strong>ID:</strong> <span th:text="${product.proId}"></span></p>
+                <p class="card-text"><strong>Name:</strong> <span th:text="${product.proName}"></span></p>
+                <p class="card-text"><strong>Price:</strong> <span th:text="${product.proPrice}"></span></p>
+                <p class="card-text"><strong>Discounted Price:</strong> <span th:text="${product.dprice}"></span></p>
+                <p class="card-text"><strong>Brand:</strong> <span th:text="${product.proBrand}"></span></p>
+                <p class="card-text"><strong>Description:</strong> <span th:text="${product.proDescription}"></span></p>
+                <p class="card-text"><strong>Category:</strong> <span th:text="${product.proCategory}"></span></p>
+                <p class="card-text"><strong>Created At:</strong> <span th:text="${product.createdAt}"></span></p>
+                <p class="card-text"><strong>Created By:</strong> <span th:text="${product.createdBy}"></span></p>
+            </div>
+        </div>
+
+        <div th:if="${error}" class="alert alert-danger" role="alert">
+            <p th:text="${error}"></p>
+        </div>
+
+        <div class="text-center">
+            <a class="btn btn-primary" th:href="@{/postid}">Search Another Product</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

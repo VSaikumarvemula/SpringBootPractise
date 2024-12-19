@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Details</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>User Details</h2>
+        <div th:if="${user != null}">
+            <table class="table table-bordered">
+                <tr>
+                    <th>First Name</th>
+                    <td th:text="${user.firstName}"></td>
+                </tr>
+                <tr>
+                    <th>Last Name</th>
+                    <td th:text="${user.lastName}"></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td th:text="${user.email}"></td>
+                </tr>
+                <tr>
+                    <th>Mobile</th>
+                    <td th:text="${user.mobile}"></td>
+                </tr>
+                <tr>
+                    <th>Username</th>
+                    <td th:text="${user.Username}"></td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td th:text="${user.city}"></td>
+                </tr>
+                <tr>
+                    <th>State</th>
+                    <td th:text="${user.state}"></td>
+                </tr>
+                <tr>
+                    <th>Country</th>
+                    <td th:text="${user.country}"></td>
+                </tr>
+            </table>
+        </div>
+        <div th:if="${error != null}">
+            <div class="alert alert-danger" th:text="${error}"></div>
+        </div>
+        <a href="/login" class="btn btn-primary">Back to Login</a>
+    </div>
+</body>
+</html>
